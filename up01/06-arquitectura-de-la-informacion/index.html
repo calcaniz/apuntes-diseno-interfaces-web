@@ -13,26 +13,28 @@
       
       
       
+        <link rel="prev" href="../05-design-thinking/">
       
-        <link rel="next" href="up01/01-index/">
+      
+        <link rel="next" href="../07-card-sorting-e-inventario-de-contenidos/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Inicio - Diseño de Interfaces Web</title>
+        <title>6. Arquitectura de la información - Diseño de Interfaces Web</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#diseno-de-interfaces-web" class="md-skip">
+        <a href="#61-principios-fundamentales-de-la-ai" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="." title="Diseño de Interfaces Web" class="md-header__button md-logo" aria-label="Diseño de Interfaces Web" data-md-component="logo">
+    <a href="../.." title="Diseño de Interfaces Web" class="md-header__button md-logo" aria-label="Diseño de Interfaces Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Inicio
+              6. Arquitectura de la información
             
           </span>
         </div>
@@ -211,11 +213,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -232,11 +232,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="up01/01-index/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-index/" class="md-tabs__link">
           
   
   
@@ -270,7 +272,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Diseño de Interfaces Web" class="md-nav__button md-logo" aria-label="Diseño de Interfaces Web" data-md-component="logo">
+    <a href="../.." title="Diseño de Interfaces Web" class="md-nav__button md-logo" aria-label="Diseño de Interfaces Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -285,37 +287,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Inicio
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -331,70 +306,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bienvenida" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bienvenida
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#que-aprenderemos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿Qué aprenderemos?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recorrido-del-modulo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recorrido del módulo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#como-trabajaremos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿Cómo trabajaremos?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -403,26 +314,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -440,7 +356,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -458,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/01-index/" class="md-nav__link">
+      <a href="../01-index/" class="md-nav__link">
         
   
   
@@ -486,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/02-la-interfaz-como-medio-de-comunicacion/" class="md-nav__link">
+      <a href="../02-la-interfaz-como-medio-de-comunicacion/" class="md-nav__link">
         
   
   
@@ -514,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/03-componentes-basicos-de-una-interfaz-web/" class="md-nav__link">
+      <a href="../03-componentes-basicos-de-una-interfaz-web/" class="md-nav__link">
         
   
   
@@ -542,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/04-diseno-centrado-en-el-usuario-y-definicion-de-objeto/" class="md-nav__link">
+      <a href="../04-diseno-centrado-en-el-usuario-y-definicion-de-objeto/" class="md-nav__link">
         
   
   
@@ -570,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/05-design-thinking/" class="md-nav__link">
+      <a href="../05-design-thinking/" class="md-nav__link">
         
   
   
@@ -595,10 +511,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="up01/06-arquitectura-de-la-informacion/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Arquitectura de la información
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -614,6 +555,46 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-principios-fundamentales-de-la-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Principios fundamentales de la AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-accesibilidad-de-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Accesibilidad de la información
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -626,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/07-card-sorting-e-inventario-de-contenidos/" class="md-nav__link">
+      <a href="../07-card-sorting-e-inventario-de-contenidos/" class="md-nav__link">
         
   
   
@@ -654,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/08-el-diagrama-jerarquico/" class="md-nav__link">
+      <a href="../08-el-diagrama-jerarquico/" class="md-nav__link">
         
   
   
@@ -682,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/09-mapa-navegacion/" class="md-nav__link">
+      <a href="../09-mapa-navegacion/" class="md-nav__link">
         
   
   
@@ -710,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/10-fundamentos-del-diseno-visual-aplicado-a-interfaces-web/" class="md-nav__link">
+      <a href="../10-fundamentos-del-diseno-visual-aplicado-a-interfaces-web/" class="md-nav__link">
         
   
   
@@ -738,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/11-color-y-tipografia-para-interfaces-web/" class="md-nav__link">
+      <a href="../11-color-y-tipografia-para-interfaces-web/" class="md-nav__link">
         
   
   
@@ -766,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/12-wireframes-prototipos-herramientas-de-diseno/" class="md-nav__link">
+      <a href="../12-wireframes-prototipos-herramientas-de-diseno/" class="md-nav__link">
         
   
   
@@ -794,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="up01/13-guias-de-estilo-plantillas-y-componentes-reutilizables/" class="md-nav__link">
+      <a href="../13-guias-de-estilo-plantillas-y-componentes-reutilizables/" class="md-nav__link">
         
   
   
@@ -839,8 +820,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -849,10 +828,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bienvenida" class="md-nav__link">
+  <a href="#61-principios-fundamentales-de-la-ai" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bienvenida
+        6.1. Principios fundamentales de la AI
       
     </span>
   </a>
@@ -860,32 +839,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#que-aprenderemos" class="md-nav__link">
+  <a href="#62-accesibilidad-de-la-informacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ¿Qué aprenderemos?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recorrido-del-modulo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recorrido del módulo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#como-trabajaremos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿Cómo trabajaremos?
+        6.2. Accesibilidad de la información
       
     </span>
   </a>
@@ -909,118 +866,37 @@
 
 
 
-<h1 id="diseno-de-interfaces-web">Diseño de Interfaces Web</h1>
-<blockquote>
-<p><strong>DIW · 2.º DAW · Curso 2026/2027</strong><br />
-Diseñar no consiste únicamente en hacer una web atractiva, sino en conseguir que cada persona pueda comprenderla, utilizarla y disfrutarla.</p>
-</blockquote>
-<h2 id="bienvenida">Bienvenida</h2>
-<p>Una interfaz web es el punto de encuentro entre una aplicación y sus usuarios. Su diseño determina cómo se presenta la información, qué acciones pueden realizarse y con qué facilidad puede alcanzarse un objetivo.</p>
-<p>En este módulo aprenderemos a planificar y desarrollar interfaces web <strong>coherentes, atractivas, adaptables, accesibles y fáciles de utilizar</strong>. Para ello trabajaremos aspectos como la arquitectura de la información, la comunicación visual, el color, la tipografía, las hojas de estilo, el diseño responsive, los contenidos multimedia, la accesibilidad y la usabilidad.</p>
-<p>A lo largo del curso aplicaremos estos conocimientos al desarrollo progresivo de <strong>FestWeb</strong>, un portal web dedicado a la consulta y difusión de eventos.</p>
-<blockquote>
-<p><strong>Pregunta de partida:</strong><br />
-¿Por qué algunas interfaces resultan intuitivas desde el primer momento mientras que otras nos hacen sentir completamente perdidos?</p>
-</blockquote>
-<h2 id="que-aprenderemos">¿Qué aprenderemos?</h2>
-<p>A lo largo del curso aprenderemos a:</p>
+  <h1>6. Arquitectura de la información</h1>
+
+<p>La <strong>arquitectura de la información (AI)</strong> es la disciplina encargada de estructurar, organizar y etiquetar los contenidos de un entorno digital para que los usuarios puedan encontrar lo que buscan y completar sus tareas con el menor esfuerzo mental posible.</p>
+<p>En el entorno web es el equivalente al plano estructural de un edificio: define la disposición de las estancias, las vías de circulación y la rotulación de las puertas antes de levantar los muros. Es indispensable porque:</p>
 <ul>
-<li>Analizar los principios básicos de la comunicación visual aplicados a interfaces web;</li>
-<li>Organizar la información y diseñar sistemas de navegación comprensibles;</li>
-<li>Seleccionar colores y tipografías adecuados para su visualización en pantalla;</li>
-<li>Crear wireframes, guías de estilo, componentes, plantillas y prototipos interactivos;</li>
-<li>Desarrollar interfaces homogéneas mediante HTML y CSS;</li>
-<li>Adaptar las interfaces a diferentes dispositivos y tamaños de pantalla;</li>
-<li>Preparar, optimizar e integrar imágenes, audio, vídeo y animaciones;</li>
-<li>Diseñar y verificar interfaces web accesibles;</li>
-<li>Analizar y mejorar la usabilidad y la experiencia de usuario.</li>
+<li>Reduce la carga cognitiva al presentar los datos en bloques lógicos y asimilables.</li>
+<li>Mejora la usabilidad y la navegabilidad, permitiendo al usuario construir un modelo mental claro de dónde se encuentra y cómo moverse por el sistema.</li>
+<li>Optimiza la escalabilidad del código, ya que una estructura limpia se traduce en una arquitectura de rutas y componentes más legible, mantenible y modular.</li>
 </ul>
-<h2 id="recorrido-del-modulo">Recorrido del módulo</h2>
-<table>
-<thead>
-<tr>
-<th class="table-full-container table-cl-secundario table-bg-principal">Unidad</th>
-<th class="table-cl-secundario table-bg-principal">Título</th>
-<th class="table-cl-secundario table-bg-principal" style="text-align: center;">Resultado de aprendizaje</th>
-<th class="table-cl-secundario table-bg-principal" style="text-align: center;">Duración</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong><a href="up01/01-index/">UP01</a></strong></td>
-<td>Diseño centrado en el usuario: arquitectura, identidad visual y prototipado</td>
-<td style="text-align: center;">RA1</td>
-<td style="text-align: center;">28 h</td>
-</tr>
-<tr>
-<td><strong>UP02</strong></td>
-<td>CSS, selectores y estilos homogéneos</td>
-<td style="text-align: center;">RA2</td>
-<td style="text-align: center;">20 h</td>
-</tr>
-<tr>
-<td><strong>UP03</strong></td>
-<td>Diseño responsive, frameworks CSS y preprocesadores</td>
-<td style="text-align: center;">RA2</td>
-<td style="text-align: center;">18 h</td>
-</tr>
-<tr>
-<td><strong>UP04</strong></td>
-<td>Preparación y optimización de contenidos multimedia</td>
-<td style="text-align: center;">RA3</td>
-<td style="text-align: center;">16 h</td>
-</tr>
-<tr>
-<td><strong>UP05</strong></td>
-<td>Integración multimedia e interactividad web</td>
-<td style="text-align: center;">RA4</td>
-<td style="text-align: center;">16 h</td>
-</tr>
-<tr>
-<td><strong>UP06</strong></td>
-<td>Accesibilidad web y verificación WCAG</td>
-<td style="text-align: center;">RA5</td>
-<td style="text-align: center;">18 h</td>
-</tr>
-<tr>
-<td><strong>UP07</strong></td>
-<td>Usabilidad web, navegación y validación</td>
-<td style="text-align: center;">RA6</td>
-<td style="text-align: center;">17 h</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>Total</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>133 h</strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="como-trabajaremos">¿Cómo trabajaremos?</h2>
-<p>Cada unidad combinará:</p>
-<ol>
-<li>Una introducción a los conceptos y principios fundamentales.</li>
-<li>El análisis de interfaces y situaciones reales.</li>
-<li>Demostraciones prácticas y procesos de diseño realizados en directo.</li>
-<li>Actividades aplicadas al desarrollo progresivo de FestWeb.</li>
-<li>La utilización de herramientas profesionales de diseño y desarrollo web.</li>
-<li>La revisión, retroalimentación y mejora de los productos elaborados.</li>
-<li>La validación de los aprendizajes y criterios de evaluación trabajados.</li>
-</ol>
-<p>La teoría no será un contenido aislado: servirá para analizar problemas, justificar decisiones de diseño y construir interfaces que respondan a las necesidades reales de sus usuarios.</p>
-<hr />
-<blockquote>
-<p><em>Una buena interfaz no necesita explicar constantemente cómo funciona: guía al usuario para que pueda descubrirlo.</em></p>
-</blockquote>
+<h3 id="61-principios-fundamentales-de-la-ai">6.1. Principios fundamentales de la AI</h3>
+<p>Para construir una arquitectura de la información sólida, debemos aplicar cinco pilares de organización:</p>
+<ul>
+<li><strong>Organización de contenidos:</strong> inventariar todo el contenido de la aplicación y clasificarlo según criterios coherentes.</li>
+<li><strong>Agrupación de la información:</strong> empaquetar la información en conjuntos de elementos relacionados, aplicando principios de la Gestalt como la proximidad y la semejanza.</li>
+<li><strong>Etiquetado (<em>labeling</em>):</strong> seleccionar con precisión las palabras o términos que representarán a un conjunto de contenidos o a una funcionalidad.</li>
+<li><strong>Jerarquía de contenidos:</strong> establecer niveles de importancia para los datos. Puede ser estructural —contenido de primer nivel, segundo nivel o detalle— o visual —tamaño, contraste y maquetación semántica—.</li>
+<li><strong>Consistencia interna:</strong> mantener los patrones de etiquetado, organización y jerarquía en toda la aplicación.</li>
+</ul>
+<h3 id="62-accesibilidad-de-la-informacion">6.2. Accesibilidad de la información</h3>
+<p>Una buena arquitectura garantiza que el acceso a los datos críticos sea directo. Para medir su calidad se aplican dos reglas de ingeniería de usabilidad:</p>
+<ul>
+<li><strong>Principio del menor esfuerzo:</strong> minimizar los pasos e interacciones necesarios para alcanzar un dato clave, reduciendo clics, desplazamientos y búsquedas infructuosas.</li>
+<li><strong>Regla de visibilidad progresiva:</strong> mostrar únicamente la información básica e imprescindible en la vista inicial y permitir al usuario desplegar o consultar los detalles solo cuando los necesite. Así se evita la saturación visual.</li>
+</ul>
+<div class="admonition salto-pagina-pdf"></div>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -1049,15 +925,31 @@ Diseñar no consiste únicamente en hacer una web atractiva, sino en conseguir q
       
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
+          
+          <a href="../05-design-thinking/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 5. Design thinking">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                5. Design thinking
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="up01/01-index/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 1. Relación Curricular">
+          <a href="../07-card-sorting-e-inventario-de-contenidos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 7. Card Sorting e inventario de contenidos">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                1. Relación Curricular
+                7. Card Sorting e inventario de contenidos
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1094,10 +986,10 @@ Diseñar no consiste únicamente en hacer una web atractiva, sino en conseguir q
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "search.suggest", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
