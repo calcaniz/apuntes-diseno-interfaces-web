@@ -56,3 +56,15 @@ nav:
   - Inicio: index.md
   - UP01. Diseño centrado en el usuario:
       - 1. Relación Curricular: up01/01-index.md
+      - 2. La comunicación como medio de comunicación: up01/02-la-interfaz-como-medio-de-comunicacion.md
+      - 3. Componentes básicos de una interfaz Web: up01/03-componentes-basicos-de-una-interfaz-web.md
+      - 4. Diseño centrado en el usuario y definición de objeto: up01/04-diseno-centrado-en-el-usuario-y-definicion-de-objeto.md
+      - 5. Design thinking: up01/05-design-thinking.md
+      - 6. Arquitectura de la información: up01/06-arquitectura-de-la-informacion.md
+      - 7. Card Sorting e inventario de contenidos: up01/07-card-sorting-e-inventario-de-contenidos.md
+      - 8. El diagrama jerárquico: up01/08-el-diagrama-jerarquico.md
+      - 9. Mapa de navegación: up01/09-mapa-navegacion.md
+      - 10. Fundamentos del diseño visual aplicado a interfaces Web: up01/10-fundamentos-del-diseno-visual-aplicado-a-interfaces-web.md
+      - 11. Color y tipografía para interfaces Web: up01/11-color-y-tipografia-para-interfaces-web.md
+      - 12. Wireframes, prototipos y herramientas de diseño : up01/12-wireframes-prototipos-herramientas-de-diseno.md
+      - 13. Guías de estilo, plantillas y componentes reutilizables: up01/13-guias-de-estilo-plantillas-y-componentes-reutilizables.md
