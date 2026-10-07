@@ -1,0 +1,3064 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes del módulo de Diseño de Interfaces Web de 2.º DAW">
+      
+      
+        <meta name="author" content="Carlos Alcañiz Carbonell">
+      
+      
+      
+        <link rel="prev" href="../03-incorporacion-y-organizacion/">
+      
+      
+        <link rel="next" href="../05-cascada-herencia-especificidad/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Selectores CSS - Diseño de Interfaces Web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#31-documento-html-de-partida" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Diseño de Interfaces Web" class="md-header__button md-logo" aria-label="Diseño de Interfaces Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Diseño de Interfaces Web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Selectores CSS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="light-green"  aria-label="Activar modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Activar modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="light-green"  aria-label="Activar modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Activar modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../up01/01-index/" class="md-tabs__link">
+          
+  
+  
+  UP01. Diseño centrado en el usuario
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-index/" class="md-tabs__link">
+          
+  
+  
+  UP02. CSS, selectores y estilos homogéneos
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Diseño de Interfaces Web" class="md-nav__button md-logo" aria-label="Diseño de Interfaces Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Diseño de Interfaces Web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP01. Diseño centrado en el usuario
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP01. Diseño centrado en el usuario
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/01-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Relación Curricular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/02-la-interfaz-como-medio-de-comunicacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. La comunicación como medio de comunicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/03-componentes-basicos-de-una-interfaz-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Componentes básicos de una interfaz Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/04-diseno-centrado-en-el-usuario-y-definicion-de-objeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Diseño centrado en el usuario y definición de objeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/05-design-thinking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Design thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/06-arquitectura-de-la-informacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Arquitectura de la información
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/07-card-sorting-e-inventario-de-contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Card Sorting e inventario de contenidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/08-el-diagrama-jerarquico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. El diagrama jerárquico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/09-mapa-navegacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Mapa de navegación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/10-fundamentos-del-diseno-visual-aplicado-a-interfaces-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fundamentos del diseño visual aplicado a interfaces Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/11-color-y-tipografia-para-interfaces-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Color y tipografía para interfaces Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/12-wireframes-prototipos-herramientas-de-diseno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Wireframes, prototipos y herramientas de diseño
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/13-guias-de-estilo-plantillas-y-componentes-reutilizables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Guías de estilo, plantillas y componentes reutilizables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP02. CSS, selectores y estilos homogéneos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP02. CSS, selectores y estilos homogéneos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relación Curricular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-introduccion-a-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-incorporacion-y-organizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Incorporación y organización de estilos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Selectores CSS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Selectores CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-documento-html-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Documento HTML de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-selector-universal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Selector universal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-selector-de-etiqueta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Selector de etiqueta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-selector-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Selector de clase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Selector de clase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varias-clases-en-un-elemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varias clases en un elemento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-selector-de-identificador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Selector de identificador
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5. Selector de identificador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuando-utilizar-un-identificador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuándo utilizar un identificador?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-agrupacion-de-selectores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Agrupación de selectores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-selectores-de-atributo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7. Selectores de atributo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7. Selectores de atributo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existencia-de-un-atributo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existencia de un atributo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coincidencia-exacta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coincidencia exacta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-valor-comienza-por-una-cadena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El valor comienza por una cadena
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-valor-termina-en-una-cadena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El valor termina en una cadena
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-valor-contiene-una-cadena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El valor contiene una cadena
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-de-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen de operadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributos personalizados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-selectores-compuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8. Selectores compuestos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-combinadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.9. Combinadores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.9. Combinadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descendiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descendiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hijo-directo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hijo directo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hermano-adyacente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hermano adyacente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hermanos-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hermanos generales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-pseudoclases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.10. Pseudoclases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.10. Pseudoclases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :hover
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :focus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focus-visible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :focus-visible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :active
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :visited
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudoclases de formulario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-estructurales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudoclases estructurales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoclases estructurales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primer-hijo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primer hijo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ultimo-hijo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Último hijo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicion-determinada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posición determinada
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negacion-con-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negación con :not()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311-pseudoelementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.11. Pseudoelementos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.11. Pseudoelementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::before
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::after
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-letter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::first-letter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::placeholder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-y-accesibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contenido y accesibilidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312-pseudoclase-frente-a-pseudoelemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.12. Pseudoclase frente a pseudoelemento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#313-como-leer-un-selector-complejo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.13. Cómo leer un selector complejo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#314-ejemplo-completo-de-festweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14. Ejemplo completo de FestWeb
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.14. Ejemplo completo de FestWeb">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-cascada-herencia-especificidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Cascada, herencia y especificidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-documento-html-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Documento HTML de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-selector-universal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Selector universal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-selector-de-etiqueta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Selector de etiqueta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-selector-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Selector de clase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Selector de clase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varias-clases-en-un-elemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varias clases en un elemento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-selector-de-identificador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Selector de identificador
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5. Selector de identificador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuando-utilizar-un-identificador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuándo utilizar un identificador?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-agrupacion-de-selectores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Agrupación de selectores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-selectores-de-atributo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7. Selectores de atributo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7. Selectores de atributo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existencia-de-un-atributo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existencia de un atributo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coincidencia-exacta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coincidencia exacta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-valor-comienza-por-una-cadena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El valor comienza por una cadena
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-valor-termina-en-una-cadena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El valor termina en una cadena
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-valor-contiene-una-cadena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El valor contiene una cadena
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-de-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen de operadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributos personalizados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-selectores-compuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8. Selectores compuestos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-combinadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.9. Combinadores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.9. Combinadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descendiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descendiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hijo-directo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hijo directo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hermano-adyacente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hermano adyacente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hermanos-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hermanos generales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-pseudoclases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.10. Pseudoclases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.10. Pseudoclases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :hover
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :focus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focus-visible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :focus-visible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :active
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        :visited
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-de-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudoclases de formulario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudoclases-estructurales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudoclases estructurales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudoclases estructurales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primer-hijo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primer hijo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ultimo-hijo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Último hijo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicion-determinada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posición determinada
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negacion-con-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negación con :not()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311-pseudoelementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.11. Pseudoelementos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.11. Pseudoelementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::before
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::after
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-letter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::first-letter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::placeholder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ::selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-y-accesibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contenido y accesibilidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312-pseudoclase-frente-a-pseudoelemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.12. Pseudoclase frente a pseudoelemento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#313-como-leer-un-selector-complejo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.13. Cómo leer un selector complejo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#314-ejemplo-completo-de-festweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14. Ejemplo completo de FestWeb
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.14. Ejemplo completo de FestWeb">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>3. Selectores CSS</h1>
+
+<p>Las declaraciones CSS indican qué apariencia debe tener un elemento. Sin embargo, antes de aplicar esas declaraciones, el navegador necesita saber <strong>qué elementos debe seleccionar</strong>.</p>
+<p>Los selectores CSS son patrones que permiten localizar elementos dentro del DOM.</p>
+<p>Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El selector <code>.event-card</code> indica que la declaración debe aplicarse a todos los elementos que contengan la clase <code>event-card</code>.</p>
+<blockquote>
+<p><strong>Pregunta de partida:</strong><br />
+¿Cómo podemos aplicar un estilo a todas las tarjetas de FestWeb, modificar solamente sus títulos o cambiar la apariencia de un botón cuando el usuario sitúa el puntero sobre él?</p>
+</blockquote>
+<h2 id="31-documento-html-de-partida">3.1. Documento HTML de partida</h2>
+<p>Utilizaremos esta tarjeta de evento como referencia durante el apartado:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card event-card--featured"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__category"</span><span class="p">&gt;</span>
+    Música
+  <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__title"</span><span class="p">&gt;</span>
+    Festival SoundWave
+  <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__meta"</span><span class="p">&gt;</span>
+    18 de octubre · Valencia
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">a</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">"button event-card__link"</span>
+    <span class="na">href</span><span class="o">=</span><span class="s">"evento.html"</span>
+    <span class="na">data-type</span><span class="o">=</span><span class="s">"featured"</span>
+  <span class="p">&gt;</span>
+    Ver evento
+  <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Cada selector nos permitirá localizar una parte diferente de esta estructura.</p>
+<h2 id="32-selector-universal">3.2. Selector universal</h2>
+<p>El selector universal se representa mediante un asterisco:</p>
+<div class="highlight"><pre><span></span><code><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Selecciona todos los elementos del documento.</p>
+<p>Resulta útil para aplicar determinados ajustes globales.</p>
+<p>Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Esta regla modifica la forma de calcular el tamaño de todas las cajas. Estudiaremos su funcionamiento en el apartado dedicado al modelo de caja.</p>
+<p>También podemos seleccionar los elementos y sus pseudoelementos:</p>
+<div class="highlight"><pre><span></span><code><span class="o">*,</span>
+<span class="o">*</span><span class="p">::</span><span class="nd">before</span><span class="o">,</span>
+<span class="o">*</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El selector universal debe utilizarse con una finalidad concreta. Aplicar colores, tamaños o bordes a todos los elementos podría provocar efectos no deseados.</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Regla excesivamente general */</span>
+<span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El problema principal no es que el selector universal sea siempre lento, sino que puede afectar a elementos que no pretendíamos modificar.</p>
+<h2 id="33-selector-de-etiqueta">3.3. Selector de etiqueta</h2>
+<p>El selector de etiqueta, también denominado selector de tipo, utiliza el nombre de un elemento HTML.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Esta regla selecciona el elemento <code>&lt;body&gt;</code>.</p>
+<p>Podemos aplicar una misma presentación a todos los párrafos:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>O a todos los enlaces:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Los selectores de etiqueta se utilizan habitualmente para establecer estilos base:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#C6D8FF</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span><span class="o">,</span>
+<span class="nt">h2</span><span class="o">,</span>
+<span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Debemos utilizarlos con cuidado cuando no queremos que todos los elementos del mismo tipo tengan la misma apariencia.</p>
+<p>Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Esta regla modificaría todos los enlaces, aunque algunos formen parte del menú, otros de una tarjeta y otros del pie de página.</p>
+<div class="admonition salto-pagina-pdf"></div>
+<h2 id="34-selector-de-clase">3.4. Selector de clase</h2>
+<p>El selector de clase comienza con un punto:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Selecciona todos los elementos cuyo atributo <code>class</code> contiene <code>event-card</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card"</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Una misma clase puede utilizarse en varios elementos:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card"</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card"</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card"</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Todos recibirán las mismas reglas:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#C6D8FF</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Las clases son la herramienta principal para construir componentes reutilizables.</p>
+<h3 id="varias-clases-en-un-elemento">Varias clases en un elemento</h3>
+<p>Un elemento puede contener varias clases separadas mediante espacios:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card event-card--featured"</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>En este caso, el elemento pertenece a dos clases:</p>
+<ul>
+<li><code>event-card</code></li>
+<li><code>event-card--featured</code></li>
+</ul>
+<p>Podemos aplicar estilos generales mediante la primera clase y añadir una variante mediante la segunda.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">event-card--featured</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La clase modificadora no sustituye a la clase principal. Ambas se aplican sobre el mismo elemento.</p>
+<h2 id="35-selector-de-identificador">3.5. Selector de identificador</h2>
+<p>El selector de identificador comienza con una almohadilla:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">main-header</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#C6D8FF</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Selecciona el elemento cuyo atributo <code>id</code> coincide con el nombre indicado:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">header</span> <span class="na">id</span><span class="o">=</span><span class="s">"main-header"</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Un identificador debe ser único dentro del documento.</p>
+<p>El siguiente código no sería correcto:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">header</span> <span class="na">id</span><span class="o">=</span><span class="s">"main-header"</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">"main-header"</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="cuando-utilizar-un-identificador">¿Cuándo utilizar un identificador?</h3>
+<p>Los identificadores pueden resultar útiles para:</p>
+<ul>
+<li>Crear enlaces internos.</li>
+<li>Relacionar etiquetas y campos de formulario.</li>
+<li>Identificar regiones concretas.</li>
+<li>Localizar elementos desde JavaScript.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"email"</span><span class="p">&gt;</span>Correo electrónico<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="na">type</span><span class="o">=</span><span class="s">"email"</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>También pueden utilizarse como destino de un enlace:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#featured-events"</span><span class="p">&gt;</span>
+  Ir a eventos destacados
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">"featured-events"</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Aunque CSS permite seleccionar identificadores, normalmente evitaremos utilizarlos para aplicar estilos.</p>
+<p>Los selectores de identificador tienen una especificidad elevada y dificultan la reutilización y posterior redefinición.</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Menos reutilizable */</span>
+<span class="p">#</span><span class="nn">featured-card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Es preferible utilizar una clase:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Más reutilizable */</span>
+<span class="p">.</span><span class="nc">event-card--featured</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="36-agrupacion-de-selectores">3.6. Agrupación de selectores</h2>
+<p>Podemos aplicar las mismas declaraciones a varios selectores separándolos mediante comas:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">h1</span><span class="o">,</span>
+<span class="nt">h2</span><span class="o">,</span>
+<span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Sin agrupación tendríamos que repetir las declaraciones:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La agrupación reduce la repetición, pero debemos utilizarla únicamente cuando los elementos comparten realmente la misma presentación.</p>
+<p>También podemos agrupar clases:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">button</span><span class="o">,</span>
+<span class="p">.</span><span class="nc">event-card__link</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+<span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="37-selectores-de-atributo">3.7. Selectores de atributo</h2>
+<p>Los selectores de atributo permiten localizar elementos según la presencia o el valor de sus atributos.</p>
+<p>Se escriben entre corchetes.</p>
+<h3 id="existencia-de-un-atributo">Existencia de un atributo</h3>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="nt">required</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-left</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="kt">rem</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Selecciona todos los elementos que contienen el atributo <code>required</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">required</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="coincidencia-exacta">Coincidencia exacta</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">"email"</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#C6D8FF</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Selecciona los elementos <code>&lt;input&gt;</code> cuyo atributo <code>type</code> tiene exactamente el valor <code>email</code>.</p>
+<h3 id="el-valor-comienza-por-una-cadena">El valor comienza por una cadena</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="s2">"https"</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El operador <code>^=</code> significa «comienza por».</p>
+<p>Seleccionará enlaces como:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://example.com"</span><span class="p">&gt;</span>
+  Sitio externo
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="el-valor-termina-en-una-cadena">El valor termina en una cadena</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">$=</span><span class="s2">".pdf"</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El operador <code>$=</code> significa «termina en».</p>
+<p>Seleccionará enlaces como:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"programa-festival.pdf"</span><span class="p">&gt;</span>
+  Descargar programa
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="el-valor-contiene-una-cadena">El valor contiene una cadena</h3>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">"event-card"</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El operador <code>*=</code> significa «contiene».</p>
+<p>Esta regla seleccionaría clases como:</p>
+<ul>
+<li><code>event-card</code></li>
+<li><code>event-card__title</code></li>
+<li><code>event-card--featured</code></li>
+</ul>
+<p>Debe utilizarse con cuidado, ya que también podría coincidir con nombres que contengan accidentalmente la misma cadena.</p>
+<div class="admonition salto-pagina-pdf"></div>
+<h3 id="resumen-de-operadores">Resumen de operadores</h3>
+<table>
+<thead>
+<tr>
+<th class="table-full-container table-cl-secundario table-bg-principal">Selector</th>
+<th class="table-cl-secundario table-bg-principal">Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[atributo]</code></td>
+<td>El atributo está presente</td>
+</tr>
+<tr>
+<td><code>[atributo="valor"]</code></td>
+<td>Coincidencia exacta</td>
+</tr>
+<tr>
+<td><code>[atributo^="valor"]</code></td>
+<td>El valor comienza por la cadena</td>
+</tr>
+<tr>
+<td><code>[atributo$="valor"]</code></td>
+<td>El valor termina en la cadena</td>
+</tr>
+<tr>
+<td><code>[atributo*="valor"]</code></td>
+<td>El valor contiene la cadena</td>
+</tr>
+</tbody>
+</table>
+<h3 id="atributos-personalizados">Atributos personalizados</h3>
+<p>Podemos utilizar atributos personalizados que comienzan por <code>data-</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span>
+  <span class="na">class</span><span class="o">=</span><span class="s">"button"</span>
+  <span class="na">href</span><span class="o">=</span><span class="s">"evento.html"</span>
+  <span class="na">data-type</span><span class="o">=</span><span class="s">"featured"</span>
+<span class="p">&gt;</span>
+  Ver evento
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Podemos seleccionar el elemento mediante:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="nt">data-type</span><span class="o">=</span><span class="s2">"featured"</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Los atributos <code>data-</code> también pueden ser consultados desde JavaScript.</p>
+<h2 id="38-selectores-compuestos">3.8. Selectores compuestos</h2>
+<p>Podemos combinar varios selectores sin dejar espacios entre ellos.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="p">.</span><span class="nc">button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Este selector localiza únicamente elementos <code>&lt;a&gt;</code> que también contienen la clase <code>button</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"button"</span> <span class="na">href</span><span class="o">=</span><span class="s">"evento.html"</span><span class="p">&gt;</span>
+  Ver evento
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>No seleccionaría este botón:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"button"</span><span class="p">&gt;</span>
+  Guardar evento
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>También podemos exigir que un elemento contenga dos clases:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="p">.</span><span class="nc">event-card--featured</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Selecciona elementos que contengan simultáneamente ambas clases.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card event-card--featured"</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>No debemos confundirlo con:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="p">.</span><span class="nc">event-card--featured</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El espacio indica que <code>.event-card--featured</code> debe encontrarse dentro de <code>.event-card</code>.</p>
+<h2 id="39-combinadores">3.9. Combinadores</h2>
+<p>Los combinadores expresan relaciones entre elementos del DOM.</p>
+<table>
+<thead>
+<tr>
+<th class="table-full-container table-cl-secundario table-bg-principal" style="text-align: center;">Combinador</th>
+<th class="table-cl-secundario table-bg-principal">Relación</th>
+<th class="table-cl-secundario table-bg-principal">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Espacio</td>
+<td>Descendiente</td>
+<td><code>.event-card a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>&gt;</code></td>
+<td>Hijo directo</td>
+<td><code>.event-card &gt; h2</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>+</code></td>
+<td>Hermano adyacente</td>
+<td><code>h2 + p</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>~</code></td>
+<td>Hermanos posteriores</td>
+<td><code>h2 ~ p</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="descendiente">Descendiente</h3>
+<p>El espacio selecciona elementos situados dentro de otro elemento, sin importar el nivel de profundidad.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Selecciona todos los enlaces que se encuentren dentro de una tarjeta.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"evento.html"</span><span class="p">&gt;</span>Ver evento<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>El enlace es descendiente de <code>.event-card</code>, aunque no sea su hijo directo.</p>
+<h3 id="hijo-directo">Hijo directo</h3>
+<p>El combinador <code>&gt;</code> selecciona únicamente los hijos inmediatos.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Seleccionará este título:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Festival SoundWave<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>No seleccionará el título si se encuentra dentro de otro contenedor:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Festival SoundWave<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>En este segundo caso, <code>&lt;h2&gt;</code> es descendiente de <code>&lt;article&gt;</code>, pero no su hijo directo.</p>
+<h3 id="hermano-adyacente">Hermano adyacente</h3>
+<p>El combinador <code>+</code> selecciona el primer elemento situado inmediatamente después de otro, siempre que compartan el mismo padre.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card__title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">.</span><span class="nc">event-card__meta</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Se aplicará a <code>.event-card__meta</code> cuando aparezca inmediatamente después del título:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__title"</span><span class="p">&gt;</span>
+  Festival SoundWave
+<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__meta"</span><span class="p">&gt;</span>
+  18 de octubre · Valencia
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="hermanos-generales">Hermanos generales</h3>
+<p>El combinador <code>~</code> selecciona los hermanos posteriores que comparten el mismo padre.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card__title</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Seleccionará todos los párrafos situados después del título dentro del mismo contenedor.</p>
+<h2 id="310-pseudoclases">3.10. Pseudoclases</h2>
+<p>Una pseudoclase selecciona un elemento existente cuando se encuentra en un estado determinado o cumple una condición.</p>
+<p>Las pseudoclases comienzan con dos puntos:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#3B82E6</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="hover"><code>:hover</code></h3>
+<p>Se activa cuando el puntero se encuentra sobre el elemento.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#3B82E6</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>No debemos depender exclusivamente de <code>:hover</code>, porque algunos dispositivos no utilizan ratón.</p>
+<h3 id="focus"><code>:focus</code></h3>
+<p>Selecciona el elemento que ha recibido el foco.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">focus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="w">  </span><span class="k">outline-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El foco permite saber qué elemento está seleccionado durante la navegación mediante teclado.</p>
+<h3 id="focus-visible"><code>:focus-visible</code></h3>
+<p>Selecciona el elemento cuando el navegador determina que el indicador de foco debe mostrarse de forma visible.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">focus-visible</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="w">  </span><span class="k">outline-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Normalmente resulta más adecuado que eliminar el contorno:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* No recomendado */</span>
+<span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">focus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si eliminamos el indicador de foco, debemos proporcionar una alternativa claramente visible.</p>
+<h3 id="active"><code>:active</code></h3>
+<p>Se aplica durante la activación del elemento.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">active</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">1</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En un botón, representa normalmente el instante durante el que está siendo pulsado.</p>
+<h3 id="visited"><code>:visited</code></h3>
+<p>Selecciona los enlaces que ya han sido visitados.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#A3A313</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Los navegadores limitan las propiedades que pueden modificarse mediante <code>:visited</code> para proteger la privacidad del usuario.</p>
+<div class="admonition salto-pagina-pdf"></div>
+<h3 id="pseudoclases-de-formulario">Pseudoclases de formulario</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="p">:</span><span class="nd">required</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-left</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="kt">rem</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="p">:</span><span class="nd">checked</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">accent-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#3B82E6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="p">:</span><span class="nd">disabled</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">not-allowed</span><span class="p">;</span>
+<span class="w">  </span><span class="k">opacity</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="p">:</span><span class="nd">valid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#A3A313</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="p">:</span><span class="nd">invalid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Estas pseudoclases permiten representar estados del formulario sin añadir nuevas clases manualmente.</p>
+<h3 id="pseudoclases-estructurales">Pseudoclases estructurales</h3>
+<h4 id="primer-hijo">Primer hijo</h4>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-list</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">article</span><span class="p">:</span><span class="nd">first-child</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Selecciona el artículo si es el primer hijo de su contenedor.</p>
+<h4 id="ultimo-hijo">Último hijo</h4>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-list</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">article</span><span class="p">:</span><span class="nd">last-child</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="posicion-determinada">Posición determinada</h4>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-list</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">article</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#C6D8FF</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>También podemos utilizar palabras clave o fórmulas:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Posiciones pares */</span>
+<span class="p">.</span><span class="nc">event-list</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">article</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#C6D8FF</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Posiciones impares */</span>
+<span class="p">.</span><span class="nc">event-list</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">article</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Cada tercer elemento */</span>
+<span class="p">.</span><span class="nc">event-list</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">article</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">3n</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#A3A313</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="negacion-con-not">Negación con <code>:not()</code></h3>
+<p>La pseudoclase <code>:not()</code> selecciona los elementos que no coinciden con el selector indicado.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">main-navigation</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="p">.</span><span class="nc">button</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Seleccionará los enlaces de la navegación que no tengan la clase <code>button</code>.</p>
+<p>Debe escribirse sin espacio entre <code>:not</code> y los paréntesis.</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Correcto */</span>
+<span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="p">.</span><span class="nc">button</span><span class="o">)</span>
+
+<span class="c">/* Incorrecto */</span>
+<span class="p">:</span><span class="nd">not</span><span class="w"> </span><span class="o">(</span><span class="p">.</span><span class="nc">button</span><span class="o">)</span>
+</code></pre></div>
+<h2 id="311-pseudoelementos">3.11. Pseudoelementos</h2>
+<p>Los pseudoelementos permiten seleccionar una parte concreta de un elemento o generar una caja visual que no aparece como una etiqueta independiente en el HTML.</p>
+<p>Se escriben habitualmente mediante dos puntos dobles:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card__link</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">" →"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="before"><code>::before</code></h3>
+<p>Genera contenido antes del contenido del elemento.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card__category</span><span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">"★ "</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="after"><code>::after</code></h3>
+<p>Genera contenido después del contenido del elemento.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card__link</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">" →"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Los pseudoelementos <code>::before</code> y <code>::after</code> necesitan normalmente la propiedad <code>content</code>.</p>
+<h3 id="first-letter"><code>::first-letter</code></h3>
+<p>Selecciona la primera letra de un bloque de texto.</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-description</span><span class="p">::</span><span class="nd">first-letter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="placeholder"><code>::placeholder</code></h3>
+<p>Selecciona el texto de ayuda de un campo de formulario.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="p">::</span><span class="nd">placeholder</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">opacity</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="selection"><code>::selection</code></h3>
+<p>Permite modificar la apariencia del texto seleccionado por el usuario.</p>
+<div class="highlight"><pre><span></span><code><span class="p">::</span><span class="nd">selection</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="contenido-y-accesibilidad">Contenido y accesibilidad</h3>
+<p>El contenido esencial no debe añadirse únicamente mediante <code>::before</code> o <code>::after</code>.</p>
+<p>Por ejemplo, no deberíamos utilizar:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">price</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entrada agotada"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si «Entrada agotada» es información importante, debe formar parte del HTML:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__availability"</span><span class="p">&gt;</span>
+  Entrada agotada
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Los pseudoelementos resultan más adecuados para elementos decorativos o complementarios.</p>
+<h2 id="312-pseudoclase-frente-a-pseudoelemento">3.12. Pseudoclase frente a pseudoelemento</h2>
+<table>
+<thead>
+<tr>
+<th class="table-full-container table-cl-secundario table-bg-principal">Característica</th>
+<th class="table-cl-secundario table-bg-principal">Pseudoclase</th>
+<th class="table-cl-secundario table-bg-principal">Pseudoelemento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sintaxis habitual</td>
+<td>Un punto doble <code>:</code></td>
+<td>Dos puntos dobles <code>::</code></td>
+</tr>
+<tr>
+<td>Selecciona</td>
+<td>Un estado o condición</td>
+<td>Una parte o caja virtual</td>
+</tr>
+<tr>
+<td>Ejemplo</td>
+<td><code>:hover</code></td>
+<td><code>::before</code></td>
+</tr>
+<tr>
+<td>Elemento existente</td>
+<td>Sí</td>
+<td>Selecciona o genera una parte</td>
+</tr>
+<tr>
+<td>Uso</td>
+<td>Interacción y estructura</td>
+<td>Presentación parcial o decorativa</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo combinado:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">" →"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Esta regla genera un pseudoelemento después del contenido del botón cuando el botón se encuentra en estado <code>:hover</code>.</p>
+<div class="admonition salto-pagina-pdf"></div>
+<h2 id="313-como-leer-un-selector-complejo">3.13. Cómo leer un selector complejo</h2>
+<p>Consideremos este selector:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="nc">event-card__content</span><span class="w"> </span><span class="nt">a</span><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span>
+</code></pre></div>
+<p>Podemos interpretarlo de derecha a izquierda:</p>
+<ol>
+<li>Selecciona un elemento con la clase <code>.button</code>.</li>
+<li>Debe ser un enlace <code>&lt;a&gt;</code>.</li>
+<li>Debe encontrarse en estado <code>:hover</code>.</li>
+<li>Debe estar dentro de <code>.event-card__content</code>.</li>
+<li><code>.event-card__content</code> debe ser hijo directo de <code>.event-card</code>.</li>
+</ol>
+<p>Aunque CSS permite crear selectores muy largos, no siempre son recomendables.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">main</span><span class="w"> </span><span class="nt">section</span><span class="w"> </span><span class="nt">article</span><span class="w"> </span><span class="nt">div</span><span class="w"> </span><span class="nt">a</span><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Este selector depende demasiado de la estructura del HTML. Si añadimos o eliminamos un contenedor, podría dejar de funcionar.</p>
+<p>Es preferible utilizar clases reutilizables:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>O un contexto breve cuando sea necesario:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition salto-pagina-pdf"></div>
+<h2 id="314-ejemplo-completo-de-festweb">3.14. Ejemplo completo de FestWeb</h2>
+<h3 id="html">HTML</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-list"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card event-card--featured"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__category"</span><span class="p">&gt;</span>
+      Música
+    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__title"</span><span class="p">&gt;</span>
+      Festival SoundWave
+    <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"event-card__meta"</span><span class="p">&gt;</span>
+      18 de octubre · Valencia
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">a</span>
+      <span class="na">class</span><span class="o">=</span><span class="s">"button event-card__link"</span>
+      <span class="na">href</span><span class="o">=</span><span class="s">"evento.html"</span>
+      <span class="na">data-type</span><span class="o">=</span><span class="s">"featured"</span>
+    <span class="p">&gt;</span>
+      Ver evento
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="admonition salto-pagina-pdf"></div>
+<h3 id="css">CSS</h3>
+<div class="highlight"><pre><span></span><code><span class="o">*,</span>
+<span class="o">*</span><span class="p">::</span><span class="nd">before</span><span class="o">,</span>
+<span class="o">*</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">event-card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#C6D8FF</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">event-card--featured</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">event-card__category</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">event-card__category</span><span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">"★ "</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">event-card__title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">.</span><span class="nc">event-card__meta</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="kt">rem</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#213FC2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#C6D8FF</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+<span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#50C9E9</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#3B82E6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">focus-visible</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#E8B718</span><span class="p">;</span>
+<span class="w">  </span><span class="k">outline-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">[</span><span class="nt">data-type</span><span class="o">=</span><span class="s2">"featured"</span><span class="o">]</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">" →"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Este ejemplo combina:</p>
+<ul>
+<li>Selector universal.</li>
+<li>Selectores de clase.</li>
+<li>Clases modificadoras.</li>
+<li>Selector de atributo.</li>
+<li>Combinador hermano adyacente.</li>
+<li>Pseudoclases.</li>
+<li>Pseudoelementos.</li>
+<li>Agrupación de selectores.</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>Un buen selector identifica los elementos necesarios sin depender más de lo imprescindible de la estructura del documento.</strong></p>
+</blockquote>
+<div class="admonition salto-pagina-pdf"></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../03-incorporacion-y-organizacion/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 2. Incorporación y organización de estilos">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                2. Incorporación y organización de estilos
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-cascada-herencia-especificidad/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 4. Cascada, herencia y especificidad">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                4. Cascada, herencia y especificidad
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026-2027 Carlos Alcañiz · Diseño de Interfaces Web
+
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
