@@ -1,0 +1,41 @@
+INHERIT: mkdocs.yml
+
+plugins:
+  - search:
+      lang: es
+
+  - print-site:
+      add_to_navigation: true
+      print_page_title: "Versión imprimible de la UP01"
+      print_page_basename: "imprimir-up01"
+
+      add_table_of_contents: true
+      toc_title: "Índice"
+      toc_depth: 2
+
+      enumerate_headings: false
+      enumerate_figures: false
+
+      add_cover_page: true
+      cover_page_template: "docs/assets/templates/portada-pdf.tpl"
+
+      add_print_site_banner: false
+      add_full_urls: false
+      include_css: true
+
+nav:
+  - UP02. CSS, selectores y estilos homogéneos:
+      - Relación Curricular: up02/01-index.md
+      - 1. Introducción a CSS: up02/02-introduccion-a-css.md
+      - 2. Incorporación y organización de estilos: up02/03-incorporacion-y-organizacion.md
+      - 3. Selectores CSS: up02/04-selectores-css.md
+      - 4. Cascada, herencia y especificidad: up02/05-cascada-herencia-especificidad.md
+
+extra:
+  generator: false
+
+  pdf:
+    modulo: "Diseño de Interfaces Web"
+    codigo_up: "UP02"
+    titulo_up: "CSS, selectores y estilos homogéneos"
+    curso: "2026-2027"

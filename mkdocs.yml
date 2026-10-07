@@ -68,3 +68,9 @@ nav:
       - 11. Color y tipografía para interfaces Web: up01/11-color-y-tipografia-para-interfaces-web.md
       - 12. Wireframes, prototipos y herramientas de diseño : up01/12-wireframes-prototipos-herramientas-de-diseno.md
       - 13. Guías de estilo, plantillas y componentes reutilizables: up01/13-guias-de-estilo-plantillas-y-componentes-reutilizables.md
+  - UP02. CSS, selectores y estilos homogéneos:
+      - Relación Curricular: up02/01-index.md
+      - 1. Introducción a CSS: up02/02-introduccion-a-css.md
+      - 2. Incorporación y organización de estilos: up02/03-incorporacion-y-organizacion.md
+      - 3. Selectores CSS: up02/04-selectores-css.md
+      - 4. Cascada, herencia y especificidad: up02/05-cascada-herencia-especificidad.md

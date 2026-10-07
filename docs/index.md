@@ -37,7 +37,7 @@ A lo largo del curso aprenderemos a:
 | Unidad { .table-full-container .table-cl-secundario .table-bg-principal } | Título { .table-cl-secundario .table-bg-principal } | Resultado de aprendizaje { .table-cl-secundario .table-bg-principal } | Duración { .table-cl-secundario .table-bg-principal } |
 |---|---|:---:|:---:|
 | **[UP01](up01/01-index.md)** | Diseño centrado en el usuario: arquitectura, identidad visual y prototipado | RA1 | 28 h |
-| **UP02** | CSS, selectores y estilos homogéneos | RA2 | 20 h |
+| **[UP02](up02/01-index.md)** | CSS, selectores y estilos homogéneos | RA2 | 20 h |
 | **UP03** | Diseño responsive, frameworks CSS y preprocesadores | RA2 | 18 h |
 | **UP04** | Preparación y optimización de contenidos multimedia | RA3 | 16 h |
 | **UP05** | Integración multimedia e interactividad web | RA4 | 16 h |
