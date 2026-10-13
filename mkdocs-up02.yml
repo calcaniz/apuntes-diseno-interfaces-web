@@ -6,8 +6,8 @@ plugins:
 
   - print-site:
       add_to_navigation: true
-      print_page_title: "Versión imprimible de la UP01"
-      print_page_basename: "imprimir-up01"
+      print_page_title: "Versión imprimible de la UP02"
+      print_page_basename: "imprimir-up02"
 
       add_table_of_contents: true
       toc_title: "Índice"
@@ -30,6 +30,10 @@ nav:
       - 2. Incorporación y organización de estilos: up02/03-incorporacion-y-organizacion.md
       - 3. Selectores CSS: up02/04-selectores-css.md
       - 4. Cascada, herencia y especificidad: up02/05-cascada-herencia-especificidad.md
+      - 5. Unidades, color y tipografía: up02/06-unidades-color-tipografia.md
+      - 6. Modelo de caja: up02/07-modelo-de-caja.md
+      - 7. Componentes reutilizables: up02/08-componentes-reutilizables.md
+      - 8. Inspección y validación: up02/09-inspeccion-y-validacion.md
 
 extra:
   generator: false

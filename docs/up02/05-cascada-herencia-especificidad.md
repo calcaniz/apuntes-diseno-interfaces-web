@@ -240,6 +240,8 @@ Antes de utilizar `!important`, debemos comprobar:
 4. La herencia.
 5. El valor calculado por el navegador.
 
+!!! salto-pagina-pdf ""
+
 ## 4.8. Ejemplo en FestWeb
 
 Partimos de este enlace:
