@@ -74,7 +74,10 @@ nav:
       - 2. Incorporación y organización de estilos: up02/03-incorporacion-y-organizacion.md
       - 3. Selectores CSS: up02/04-selectores-css.md
       - 4. Cascada, herencia y especificidad: up02/05-cascada-herencia-especificidad.md
+      - A02.01 Laboratorio CSS (Simplificada): up02/a02-01-laboratorio-css.md
       - 5. Unidades, color y tipografía: up02/06-unidades-color-tipografia.md
       - 6. Modelo de caja: up02/07-modelo-de-caja.md
       - 7. Componentes reutilizables: up02/08-componentes-reutilizables.md
+      - A02.02 De la guía de estilo al componente (Simplificada): up02/a02-02-de-la-guia-de-estilo-al-componente.md
       - 8. Inspección y validación: up02/09-inspeccion-y-validacion.md
+      - A02.03 Sistema de estilo y control de calidad: up02/a02-03-sistema-de-estilos-y-control-de-calidad.md
