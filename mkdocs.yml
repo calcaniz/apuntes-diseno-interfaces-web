@@ -81,3 +81,15 @@ nav:
       - A02.02 De la guía de estilo al componente (Simplificada): up02/a02-02-de-la-guia-de-estilo-al-componente.md
       - 8. Inspección y validación: up02/09-inspeccion-y-validacion.md
       - A02.03 Sistema de estilo y control de calidad: up02/a02-03-sistema-de-estilos-y-control-de-calidad.md
+  - UP03:
+      - Relación Curricular: up03/01-index.md
+      - Fundamentos del diseño responsive: up03/02-diseno-responsive.md 
+      - Unidades, contenedores y recursos adaptables: up03/03-unidades-recursos-adaptables.md
+      - Composición con Flexbox: up03/04-flexbox.md
+      - Composición bidemensional con CSS Grid: up03/05-css-grid.md
+      - A03.01. De la interfaz rígida a la composición flexible: up03/06-actividad-a0301.md
+      - Mobile first, media queries y comprobación responsive: up03/07-mobile-first-media-queries.md
+      - A03.02. FestWeb mobile first: up03/08-actividad-a0302.md
+      - Desarrollo responsive con Bootstrap: up03/09-bootstrap.md
+      - Organización y compilación de estilos con Sass: up03/10-sass.md
+      - A03.03. Bootstrap y Sass en FestWeb: up03/11-actividad-a0303.md
