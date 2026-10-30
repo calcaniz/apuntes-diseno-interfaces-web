@@ -1,0 +1,2580 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes del módulo de Diseño de Interfaces Web de 2.º DAW">
+      
+      
+        <meta name="author" content="Carlos Alcañiz Carbonell">
+      
+      
+      
+        <link rel="prev" href="../10-sass/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>10. Actividad A03.03. FestWeb con Bootstrap y Sass - Diseño de Interfaces Web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#10-actividad-a0303-festweb-con-bootstrap-y-sass" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Diseño de Interfaces Web" class="md-header__button md-logo" aria-label="Diseño de Interfaces Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Diseño de Interfaces Web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10. Actividad A03.03. FestWeb con Bootstrap y Sass
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="light-green"  aria-label="Activar modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Activar modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="light-green"  aria-label="Activar modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Activar modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../up01/01-index/" class="md-tabs__link">
+          
+  
+  
+  UP01
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../up02/01-index/" class="md-tabs__link">
+          
+  
+  
+  UP02
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-index/" class="md-tabs__link">
+          
+  
+  
+  UP03
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Diseño de Interfaces Web" class="md-nav__button md-logo" aria-label="Diseño de Interfaces Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Diseño de Interfaces Web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP01
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP01
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/01-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relación Curricular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/02-la-interfaz-como-medio-de-comunicacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. La comunicación como medio de comunicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/03-componentes-basicos-de-una-interfaz-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Componentes básicos de una interfaz Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/04-diseno-centrado-en-el-usuario-y-definicion-de-objeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Diseño centrado en el usuario y definición de objeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/05-design-thinking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Design thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/06-arquitectura-de-la-informacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Arquitectura de la información
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/07-card-sorting-e-inventario-de-contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Card Sorting e inventario de contenidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/08-el-diagrama-jerarquico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. El diagrama jerárquico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/09-mapa-navegacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Mapa de navegación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/10-fundamentos-del-diseno-visual-aplicado-a-interfaces-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Fundamentos del diseño visual aplicado a interfaces Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/11-color-y-tipografia-para-interfaces-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Color y tipografía para interfaces Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/12-wireframes-prototipos-herramientas-de-diseno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Wireframes, prototipos y herramientas de diseño
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up01/13-guias-de-estilo-plantillas-y-componentes-reutilizables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Guías de estilo, plantillas y componentes reutilizables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP02
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP02
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/01-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relación Curricular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/02-introduccion-a-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/03-incorporacion-y-organizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Incorporación y organización de estilos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/04-selectores-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Selectores CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/05-cascada-herencia-especificidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Cascada, herencia y especificidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/a02-01-laboratorio-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A02.01 Laboratorio CSS (Simplificada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/06-unidades-color-tipografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Unidades, color y tipografía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/07-modelo-de-caja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Modelo de caja
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/08-componentes-reutilizables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Componentes reutilizables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/a02-02-de-la-guia-de-estilo-al-componente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A02.02 De la guía de estilo al componente (Simplificada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/09-inspeccion-y-validacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Inspección y validación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up02/a02-03-sistema-de-estilos-y-control-de-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A02.03 Sistema de estilo y control de calidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP03
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP03
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relación Curricular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-diseno-responsive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos del diseño responsive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-unidades-recursos-adaptables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades, contenedores y recursos adaptables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-flexbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composición con Flexbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-css-grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composición bidemensional con CSS Grid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-actividad-a0301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A03.01. De la interfaz rígida a la composición flexible
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-mobile-first-media-queries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile first, media queries y comprobación responsive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-actividad-a0302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A03.02. FestWeb mobile first
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-bootstrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desarrollo responsive con Bootstrap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-sass/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organización y compilación de estilos con Sass
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A03.03. Bootstrap y Sass en FestWeb
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A03.03. Bootstrap y Sass en FestWeb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101-objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1. Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-punto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2. Punto de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-organizacion-de-la-sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3. Organización de la sesión
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-incorporacion-de-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4. Incorporación de Bootstrap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-adaptacion-de-la-cabecera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5. Adaptación de la cabecera
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-adaptacion-de-la-presentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6. Adaptación de la presentación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107-cuadricula-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7. Cuadrícula de eventos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#108-adaptacion-de-las-tarjetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.8. Adaptación de las tarjetas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#109-instalacion-de-sass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.9. Instalación de Sass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1010-variables-de-festweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.10. Variables de FestWeb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1011-mixin-de-foco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.11. Mixin de foco
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1012-componentes-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.12. Componentes personalizados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1013-archivo-principal-sass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.13. Archivo principal Sass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1014-compilacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.14. Compilación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1015-comprobaciones-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.15. Comprobaciones finales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1016-puesta-en-comun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.16. Puesta en común
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1017-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.17. Ampliación
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101-objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1. Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-punto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2. Punto de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-organizacion-de-la-sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3. Organización de la sesión
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-incorporacion-de-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4. Incorporación de Bootstrap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-adaptacion-de-la-cabecera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5. Adaptación de la cabecera
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-adaptacion-de-la-presentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6. Adaptación de la presentación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107-cuadricula-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7. Cuadrícula de eventos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#108-adaptacion-de-las-tarjetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.8. Adaptación de las tarjetas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#109-instalacion-de-sass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.9. Instalación de Sass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1010-variables-de-festweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.10. Variables de FestWeb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1011-mixin-de-foco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.11. Mixin de foco
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1012-componentes-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.12. Componentes personalizados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1013-archivo-principal-sass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.13. Archivo principal Sass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1014-compilacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.14. Compilación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1015-comprobaciones-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.15. Comprobaciones finales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1016-puesta-en-comun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.16. Puesta en común
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1017-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.17. Ampliación
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="10-actividad-a0303-festweb-con-bootstrap-y-sass">10. Actividad A03.03. FestWeb con Bootstrap y Sass</h1>
+<p><strong>Duración:</strong> 55 minutos<br />
+<strong>Modalidad:</strong> Actividad formativa guiada<br />
+<strong>Realización:</strong> Sesión síncrona<br />
+<strong>Entrega:</strong> No requiere entrega independiente<br />
+<strong>Criterios trabajados:</strong> CE02-i y CE02-j</p>
+<h2 id="101-objetivo">10.1. Objetivo</h2>
+<p>En esta actividad utilizaremos Bootstrap para reconstruir la distribución responsive de FestWeb y Sass para organizar sus personalizaciones visuales.</p>
+<p>Al finalizar deberemos haber utilizado:</p>
+<ul>
+<li>El sistema de cuadrícula de Bootstrap.</li>
+<li>Clases responsive.</li>
+<li>Utilidades de espaciado y Flexbox.</li>
+<li>Componentes de tarjeta y botón.</li>
+<li>Variables Sass.</li>
+<li>Archivos parciales.</li>
+<li>El sistema de módulos con <code>@use</code>.</li>
+<li>Un mixin reutilizable.</li>
+<li>La compilación de SCSS a CSS.</li>
+</ul>
+<h2 id="102-punto-de-partida">10.2. Punto de partida</h2>
+<p>Realiza una copia del proyecto anterior y renómbrala:</p>
+<div class="highlight"><pre><span></span><code>A03.03/
+</code></pre></div>
+<p>Conserva una copia del CSS de la actividad anterior con el nombre:</p>
+<div class="highlight"><pre><span></span><code>css/estilos-a0302.css
+</code></pre></div>
+<p>El nuevo archivo <code>css/estilos.css</code> será generado por Sass. No deberá modificarse manualmente.</p>
+<p>La estructura final será:</p>
+<div class="highlight"><pre><span></span><code>A03.03/
+├── index.html
+├── css/
+│   ├── estilos-a0302.css
+│   └── estilos.css
+├── scss/
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│   ├── _componentes.scss
+│   └── estilos.scss
+└── src/
+    └── assets/
+        ├── img01.png
+        ├── img02.png
+        └── img03.png
+</code></pre></div>
+<h2 id="103-organizacion-de-la-sesion">10.3. Organización de la sesión</h2>
+<table>
+<thead>
+<tr>
+<th class="table-full-container table-cl-secundario table-bg-principal">Fase</th>
+<th class="table-cl-secundario table-bg-principal">Trabajo previsto</th>
+<th class="table-cl-secundario table-bg-principal" style="text-align: center;">Tiempo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Incorporación de Bootstrap</td>
+<td style="text-align: center;">5 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Adaptación de la cabecera y presentación</td>
+<td style="text-align: center;">10 min</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cuadrícula y tarjetas</td>
+<td style="text-align: center;">15 min</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Organización de Sass</td>
+<td style="text-align: center;">15 min</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Compilación y comprobaciones</td>
+<td style="text-align: center;">10 min</td>
+</tr>
+</tbody>
+</table>
+<h2 id="104-incorporacion-de-bootstrap">10.4. Incorporación de Bootstrap</h2>
+<p>Añade la hoja de estilos de Bootstrap dentro de <code>&lt;head&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span>
+    <span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"</span>
+    <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span>
+    <span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"</span>
+    <span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span>
+<span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"./css/estilos.css"</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Nuestra hoja debe cargarse después de Bootstrap.</p>
+<p>Añade también el archivo JavaScript antes de cerrar <code>&lt;/body&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"</span>
+    <span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"</span>
+    <span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span>
+<span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>En esta actividad no utilizaremos todavía componentes JavaScript, pero dejaremos preparado el proyecto para poder incorporar posteriormente menús plegables, modales o desplegables.</p>
+<h2 id="105-adaptacion-de-la-cabecera">10.5. Adaptación de la cabecera</h2>
+<p>Modifica las clases del contenedor de la cabecera:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">"</span>
+<span class="s">        container</span>
+<span class="s">        cabecera__contenido</span>
+<span class="s">        d-flex</span>
+<span class="s">        flex-column</span>
+<span class="s">        flex-lg-row</span>
+<span class="s">        align-items-stretch</span>
+<span class="s">        align-items-lg-center</span>
+<span class="s">        gap-3</span>
+<span class="s">        py-3</span>
+<span class="s">    "</span>
+<span class="p">&gt;</span>
+</code></pre></div>
+<p>El elemento se organizará:</p>
+<ul>
+<li>Verticalmente en móvil.</li>
+<li>Horizontalmente desde el breakpoint <code>lg</code>.</li>
+<li>Con una separación <code>gap-3</code>.</li>
+<li>Con espaciado vertical <code>py-3</code>.</li>
+</ul>
+<p>Añade clases Bootstrap al logotipo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"logotipo navbar-brand m-0"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>
+    FestWeb
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Adapta la navegación:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">nav</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">"</span>
+<span class="s">        navegacion</span>
+<span class="s">        d-flex</span>
+<span class="s">        flex-column</span>
+<span class="s">        flex-md-row</span>
+<span class="s">        justify-content-center</span>
+<span class="s">        flex-grow-1</span>
+<span class="s">        gap-2</span>
+<span class="s">    "</span>
+    <span class="na">aria-label</span><span class="o">=</span><span class="s">"Navegación principal"</span>
+<span class="p">&gt;</span>
+</code></pre></div>
+<p>Los enlaces pueden recibir las siguientes clases:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-link text-center"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-link text-center"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>Eventos<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-link text-center"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>Categorías<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-link text-center"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>Contacto<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>El botón de acceso utilizará una variante propia que crearemos mediante Sass:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-festweb"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>
+    Acceder
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="106-adaptacion-de-la-presentacion">10.6. Adaptación de la presentación</h2>
+<p>Añade las utilidades de Bootstrap a la sección:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">"presentacion py-5"</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Sustituye la clase <code>contenedor</code> por el contenedor de Bootstrap:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container"</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>La categoría puede mostrarse como una insignia:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"etiqueta badge mb-3"</span><span class="p">&gt;</span>
+    Agenda de eventos
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>El título mantendrá su clase propia y añadirá separación:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">"presentacion__titulo display-4 fw-bold mb-3"</span><span class="p">&gt;</span>
+    Encuentra tu próximo plan
+<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>La descripción tendrá una anchura de lectura controlada mediante nuestra hoja Sass:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"presentacion__descripcion lead mb-0"</span><span class="p">&gt;</span>
+    Descubre propuestas musicales, deportivas y culturales
+    cerca de ti.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="107-cuadricula-de-eventos">10.7. Cuadrícula de eventos</h2>
+<p>Modifica la cabecera de la sección:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">"</span>
+<span class="s">        eventos__cabecera</span>
+<span class="s">        d-flex</span>
+<span class="s">        flex-column</span>
+<span class="s">        flex-sm-row</span>
+<span class="s">        justify-content-between</span>
+<span class="s">        align-items-sm-center</span>
+<span class="s">        gap-2</span>
+<span class="s">        mb-4</span>
+<span class="s">    "</span>
+<span class="p">&gt;</span>
+</code></pre></div>
+<p>Transforma el listado en una fila responsive de Bootstrap:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">"</span>
+<span class="s">        listado-eventos</span>
+<span class="s">        row</span>
+<span class="s">        row-cols-1</span>
+<span class="s">        row-cols-md-2</span>
+<span class="s">        row-cols-lg-3</span>
+<span class="s">        g-4</span>
+<span class="s">    "</span>
+<span class="p">&gt;</span>
+</code></pre></div>
+<p>La cuadrícula mostrará:</p>
+<ul>
+<li>Una tarjeta por fila en móvil.</li>
+<li>Dos tarjetas desde <code>md</code>.</li>
+<li>Tres tarjetas desde <code>lg</code>.</li>
+</ul>
+<h2 id="108-adaptacion-de-las-tarjetas">10.8. Adaptación de las tarjetas</h2>
+<p>Cada tarjeta debe quedar dentro de una columna Bootstrap.</p>
+<p>La estructura será:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"col"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"tarjeta-evento card h-100"</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- Contenido de la tarjeta --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Por tanto, envuelve cada uno de los tres elementos <code>&lt;article&gt;</code> existentes con:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"col"</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>y cierra el contenedor después de <code>&lt;/article&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>La imagen utilizará:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">"tarjeta-evento__imagen card-img-top"</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">"./src/assets/img01.png"</span>
+    <span class="na">alt</span><span class="o">=</span><span class="s">"Escenario de un festival de música"</span>
+    <span class="na">width</span><span class="o">=</span><span class="s">"800"</span>
+    <span class="na">height</span><span class="o">=</span><span class="s">"450"</span>
+<span class="p">&gt;</span>
+</code></pre></div>
+<p>El contenido de la tarjeta será:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"tarjeta-evento__contenido card-body d-flex flex-column"</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Adapta la etiqueta:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"etiqueta badge align-self-start mb-3"</span><span class="p">&gt;</span>
+    Música
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Adapta el título:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">"tarjeta-evento__titulo card-title h5"</span><span class="p">&gt;</span>
+    Festival Mediterráneo
+<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Los datos secundarios pueden utilizar:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"tarjeta-evento__datos small mb-2"</span><span class="p">&gt;</span>
+    Valencia · 20 de junio
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>La descripción utilizará:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"tarjeta-evento__descripcion card-text"</span><span class="p">&gt;</span>
+    Una jornada de música en directo junto al mar.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Las acciones se situarán al final de la tarjeta:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">"</span>
+<span class="s">        tarjeta-evento__acciones</span>
+<span class="s">        d-flex</span>
+<span class="s">        flex-column</span>
+<span class="s">        flex-sm-row</span>
+<span class="s">        gap-2</span>
+<span class="s">        mt-auto</span>
+<span class="s">    "</span>
+<span class="p">&gt;</span>
+</code></pre></div>
+<p>Los botones quedarán así:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-festweb"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>
+    Ver evento
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">button</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-outline-festweb"</span>
+    <span class="na">type</span><span class="o">=</span><span class="s">"button"</span>
+<span class="p">&gt;</span>
+    Guardar
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Repite la misma estructura en las tres tarjetas.</p>
+<h2 id="109-instalacion-de-sass">10.9. Instalación de Sass</h2>
+<p>Abre una terminal dentro de <code>A03.03</code> e instala Sass:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>--save-dev<span class="w"> </span>sass
+</code></pre></div>
+<p>Si el proyecto todavía no dispone de <code>package.json</code>, ejecuta primero:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>init<span class="w"> </span>-y
+</code></pre></div>
+<h2 id="1010-variables-de-festweb">10.10. Variables de FestWeb</h2>
+<p>Crea el archivo:</p>
+<div class="highlight"><pre><span></span><code>scss/_variables.scss
+</code></pre></div>
+<p>Añade:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$color-principal</span><span class="o">:</span><span class="w"> </span><span class="mh">#50c9e9</span><span class="p">;</span>
+<span class="nv">$color-secundario</span><span class="o">:</span><span class="w"> </span><span class="mh">#3b82e6</span><span class="p">;</span>
+<span class="nv">$color-fondo</span><span class="o">:</span><span class="w"> </span><span class="mh">#c6d8ff</span><span class="p">;</span>
+<span class="nv">$color-acento</span><span class="o">:</span><span class="w"> </span><span class="mh">#a3a313</span><span class="p">;</span>
+<span class="nv">$color-texto</span><span class="o">:</span><span class="w"> </span><span class="mh">#213fc2</span><span class="p">;</span>
+<span class="nv">$color-advertencia</span><span class="o">:</span><span class="w"> </span><span class="mh">#e8b718</span><span class="p">;</span>
+<span class="nv">$color-superficie</span><span class="o">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
+
+<span class="nv">$espacio-md</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="nv">$espacio-lg</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="mf">.5</span><span class="kt">rem</span><span class="p">;</span>
+
+<span class="nv">$radio-md</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="mf">.75</span><span class="kt">rem</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="1011-mixin-de-foco">10.11. Mixin de foco</h2>
+<p>Crea:</p>
+<div class="highlight"><pre><span></span><code>scss/_mixins.scss
+</code></pre></div>
+<p>Añade un mixin para mantener un foco de teclado visible:</p>
+<div class="highlight"><pre><span></span><code><span class="k">@mixin</span><span class="nf"> foco-visible</span><span class="p">(</span><span class="nv">$color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">&amp;</span><span class="nd">:focus-visible</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">outline</span><span class="nd">:</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nv">$color</span><span class="o">;</span>
+<span class="w">        </span><span class="nt">outline-offset</span><span class="nd">:</span><span class="w"> </span><span class="nt">3px</span><span class="o">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Este mixin podrá aplicarse a diferentes componentes interactivos.</p>
+<h2 id="1012-componentes-personalizados">10.12. Componentes personalizados</h2>
+<p>Crea:</p>
+<div class="highlight"><pre><span></span><code>scss/_componentes.scss
+</code></pre></div>
+<p>Carga las variables y los mixins:</p>
+<div class="highlight"><pre><span></span><code><span class="k">@use</span><span class="w"> </span><span class="s2">"variables"</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="nt">v</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">use</span><span class="w"> </span><span class="s2">"mixins"</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="nt">m</span><span class="o">;</span>
+</code></pre></div>
+<p>Personaliza el logotipo:</p>
+<div class="highlight"><pre><span></span><code><span class="nc">.logotipo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="nt">0</span><span class="nc">.5rem</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">background-color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-principal</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">border-radius</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$radio-md</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">font-weight</span><span class="nd">:</span><span class="w"> </span><span class="nt">700</span><span class="o">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Crea la etiqueta:</p>
+<div class="highlight"><pre><span></span><code><span class="nc">.etiqueta</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">background-color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-fondo</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">border-left</span><span class="nd">:</span><span class="w"> </span><span class="nt">4px</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-acento</span><span class="o">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Crea el botón principal:</p>
+<div class="highlight"><pre><span></span><code><span class="nc">.btn-festweb</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">--bs-btn-color</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-superficie</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-bg</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-border-color</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-hover-color</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-superficie</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-hover-bg</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-secundario</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-hover-border-color</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-secundario</span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">    </span><span class="o">@</span><span class="nt">include</span><span class="w"> </span><span class="nt">m</span><span class="nc">.foco-visible</span><span class="o">(</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-principal</span><span class="o">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Crea el botón secundario:</p>
+<div class="highlight"><pre><span></span><code><span class="nc">.btn-outline-festweb</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">--bs-btn-color</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-border-color</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-hover-color</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-superficie</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-hover-bg</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="p">}</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">--bs-btn-hover-border-color</span><span class="nd">:</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">    </span><span class="o">@</span><span class="nt">include</span><span class="w"> </span><span class="nt">m</span><span class="nc">.foco-visible</span><span class="o">(</span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-principal</span><span class="o">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Personaliza las tarjetas:</p>
+<div class="highlight"><pre><span></span><code><span class="nc">.tarjeta-evento</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">border-color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-principal</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">border-radius</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$radio-md</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">overflow</span><span class="nd">:</span><span class="w"> </span><span class="nt">hidden</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nc">.tarjeta-evento__imagen</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">aspect-ratio</span><span class="nd">:</span><span class="w"> </span><span class="nt">16</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">10</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">object-fit</span><span class="nd">:</span><span class="w"> </span><span class="nt">cover</span><span class="o">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="1013-archivo-principal-sass">10.13. Archivo principal Sass</h2>
+<p>Crea:</p>
+<div class="highlight"><pre><span></span><code>scss/estilos.scss
+</code></pre></div>
+<p>Carga los módulos:</p>
+<div class="highlight"><pre><span></span><code><span class="k">@use</span><span class="w"> </span><span class="s2">"variables"</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="nt">v</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">use</span><span class="w"> </span><span class="s2">"componentes"</span><span class="o">;</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">background-color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-fondo</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nc">.cabecera</span><span class="o">,</span>
+<span class="nc">.presentacion</span><span class="o">,</span>
+<span class="nc">.tarjeta-evento</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">background-color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-superficie</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nc">.presentacion__descripcion</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">max-width</span><span class="nd">:</span><span class="w"> </span><span class="nt">42rem</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nc">.pie</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">padding-block</span><span class="nd">:</span><span class="w"> </span><span class="nt">2rem</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-superficie</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">background-color</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="nv">$color-texto</span><span class="o">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="1014-compilacion">10.14. Compilación</h2>
+<p>Ejecuta Sass en modo observación:</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>sass<span class="w"> </span>scss/estilos.scss<span class="w"> </span>css/estilos.css<span class="w"> </span>--watch
+</code></pre></div>
+<p>Mantén la terminal abierta mientras trabajas.</p>
+<p>Cada vez que guardes un archivo SCSS, Sass actualizará:</p>
+<div class="highlight"><pre><span></span><code>css/estilos.css
+</code></pre></div>
+<p>No modifiques directamente el archivo generado.</p>
+<h2 id="1015-comprobaciones-finales">10.15. Comprobaciones finales</h2>
+<p>Revisa FestWeb en:</p>
+<table>
+<thead>
+<tr>
+<th class="table-full-container table-cl-secundario table-bg-principal">Anchura</th>
+<th class="table-cl-secundario table-bg-principal">Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>390px</code></td>
+<td>Cabecera vertical, una tarjeta por fila y botones apilados.</td>
+</tr>
+<tr>
+<td><code>768px</code></td>
+<td>Navegación horizontal y dos tarjetas por fila.</td>
+</tr>
+<tr>
+<td><code>1280px</code></td>
+<td>Cabecera horizontal y tres tarjetas por fila.</td>
+</tr>
+</tbody>
+</table>
+<p>Comprueba también que:</p>
+<ul>
+<li>Bootstrap se carga correctamente.</li>
+<li><code>estilos.css</code> aparece después de Bootstrap.</li>
+<li>Las tarjetas mantienen la misma altura.</li>
+<li>Las imágenes no se deforman.</li>
+<li>Los botones utilizan los colores de FestWeb.</li>
+<li>El foco de teclado resulta visible.</li>
+<li>Sass recompila al guardar.</li>
+<li>No aparecen errores en la terminal.</li>
+<li>No existe desplazamiento horizontal.</li>
+</ul>
+<h2 id="1016-puesta-en-comun">10.16. Puesta en común</h2>
+<p>Al finalizar, responde oralmente:</p>
+<ol>
+<li>¿Qué partes de la interfaz resuelve Bootstrap?</li>
+<li>¿Qué estilos siguen siendo responsabilidad de FestWeb?</li>
+<li>¿Qué significan <code>row-cols-1</code>, <code>row-cols-md-2</code> y <code>row-cols-lg-3</code>?</li>
+<li>¿Por qué se utiliza un contenedor <code>.col</code> alrededor de cada tarjeta?</li>
+<li>¿Qué función realiza el mixin <code>foco-visible</code>?</li>
+<li>¿Qué archivo se modifica y cuál se genera?</li>
+<li>¿Por qué nuestra hoja CSS se carga después de Bootstrap?</li>
+</ol>
+<h2 id="1017-ampliacion">10.17. Ampliación</h2>
+<p>Si terminas antes, añade un efecto visual reutilizable mediante un mixin:</p>
+<div class="highlight"><pre><span></span><code><span class="k">@mixin</span><span class="nf"> elevacion</span><span class="p">(</span><span class="nv">$sombra</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">box-shadow</span><span class="nd">:</span><span class="w"> </span><span class="nv">$sombra</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">transition</span><span class="nd">:</span>
+<span class="w">        </span><span class="nt">transform</span><span class="w"> </span><span class="nt">0</span><span class="nc">.2s</span><span class="w"> </span><span class="nt">ease</span><span class="o">,</span>
+<span class="w">        </span><span class="nt">box-shadow</span><span class="w"> </span><span class="nt">0</span><span class="nc">.2s</span><span class="w"> </span><span class="nt">ease</span><span class="o">;</span>
+
+<span class="w">    </span><span class="k">&amp;</span><span class="nd">:hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">transform</span><span class="nd">:</span><span class="w"> </span><span class="nt">translateY</span><span class="o">(</span><span class="nt">-4px</span><span class="o">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Aplícalo a las tarjetas:</p>
+<div class="highlight"><pre><span></span><code><span class="nc">.tarjeta-evento</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">@include</span><span class="nd"> m</span><span class="o">.</span><span class="nf">elevacion</span><span class="p">(</span>
+<span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="nf">rgb</span><span class="p">(</span><span class="mi">33</span><span class="w"> </span><span class="mi">63</span><span class="w"> </span><span class="mi">194</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">15</span><span class="kt">%</span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../10-sass/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Organización y compilación de estilos con Sass">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Organización y compilación de estilos con Sass
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026-2027 Carlos Alcañiz · Diseño de Interfaces Web
+
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
