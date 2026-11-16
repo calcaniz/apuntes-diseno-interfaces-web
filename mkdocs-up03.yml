@@ -1,0 +1,44 @@
+INHERIT: mkdocs.yml
+
+plugins:
+  - search:
+      lang: es
+
+  - print-site:
+      add_to_navigation: true
+      print_page_title: "Versión imprimible de la UP03"
+      print_page_basename: "imprimir-up03"
+
+      add_table_of_contents: true
+      toc_title: "Índice"
+      toc_depth: 2
+
+      enumerate_headings: false
+      enumerate_figures: false
+
+      add_cover_page: true
+      cover_page_template: "docs/assets/templates/portada-pdf.tpl"
+
+      add_print_site_banner: false
+      add_full_urls: false
+      include_css: true
+
+nav:
+  - UP03:
+      - Relación Curricular: up03/01-index.md
+      - Fundamentos del diseño responsive: up03/02-diseno-responsive.md 
+      - Unidades, contenedores y recursos adaptables: up03/03-unidades-recursos-adaptables.md
+      - Composición con Flexbox: up03/04-flexbox.md
+      - Composición bidemensional con CSS Grid: up03/05-css-grid.md
+      - Mobile first, media queries y comprobación responsive: up03/07-mobile-first-media-queries.md
+      - Desarrollo responsive con Bootstrap: up03/09-bootstrap.md
+      - Organización y compilación de estilos con Sass: up03/10-sass.md
+
+extra:
+  generator: false
+
+  pdf:
+    modulo: "Diseño de Interfaces Web"
+    codigo_up: "UP03"
+    titulo_up: "Diseño Responsive, Frameworks CSS y preprocesadores"
+    curso: "2026-2027"
